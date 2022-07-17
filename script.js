@@ -6,14 +6,12 @@ counters.forEach(counter => {
 
     const updateCounter = () => {
         const target = +counter.getAttribute('data-target')
-        const c = +counter.innerText //counterlerın text içeriği c değikeni bir number değer oldu.
+        const c = +counter.innerText 
         
         const increment = target / 200
 
-        if(c < target ) { // 0 targettan küçükse True dönecek;
-            // math.ceil ondalıklı olan sayıyı yukarıya yuvarlar
+        if(c < target ) { 
             counter.innerText = `${Math.ceil(c + increment)}`
-            // setTimeOut ile kodu işlevsel hale getiriyoruz
             setTimeout(updateCounter, 1)
         } else {
             counter.innerText = target
